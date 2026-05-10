@@ -1,8 +1,6 @@
 # prepexflow
 
 
-# ExamPulse
-
 Open-source platform for SSC and competitive exam students.
 
 ## Features
@@ -26,7 +24,7 @@ Open-source platform for SSC and competitive exam students.
 
 ```bash
 git clone repo-url
-cd exam-pulse
+cd prepexflow
 ```
 
 ## Contributing
