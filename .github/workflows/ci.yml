@@ -1,3 +1,28 @@
+# name: CI
+
+# on:
+#   pull_request:
+#   push:
+#     branches:
+#       - dev
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - uses: actions/checkout@v4
+
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+
+#       - run: npm install
+#       - run: npm run lint
+
+
+
+
 name: CI
 
 on:
@@ -10,12 +35,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+    defaults:
+      run:
+        working-directory: apps/web
 
-      - uses: actions/setup-node@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - run: npm install
-      - run: npm run lint
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run lint
+        run: npm run lint
